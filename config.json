@@ -1,0 +1,10 @@
+{
+  "device_id": "K40-MAIN",
+  "device_ip": "192.168.1.201",
+  "device_port": 4370,
+  "comm_password": 0,
+  "timeout_seconds": 10,
+  "sync_interval_seconds": 300,
+  "apps_script_url": "https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec",
+  "api_key": "PASTE_THE_API_KEY_SHOWN_ON_THE_DEVICE_CONFIG_PAGE"
+}

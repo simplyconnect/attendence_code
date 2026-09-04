@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simply Connect — Attendance &amp; HR Console</title>
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===================== LOGIN ===================== -->
+<div id="loginScreen" class="login-wrap">
+  <div class="login-card">
+    <div class="login-bar"></div>
+    <img class="login-logo" src="logo.png" alt="Company logo">
+    <h1 id="loginCompanyName">Attendance Console</h1>
+    <p class="login-sub">Sign in to view attendance and manage employees.</p>
+    <form id="loginForm">
+      <label>Username
+        <input type="text" id="loginUsername" required autocomplete="username">
+      </label>
+      <label>Password
+        <input type="password" id="loginPassword" required autocomplete="current-password">
+      </label>
+      <button type="submit" class="btn-primary">Sign in</button>
+      <p id="loginError" class="error-text"></p>
+    </form>
+  </div>
+</div>
+
+<!-- ===================== APP SHELL ===================== -->
+<div id="appShell" class="app-shell hidden">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <img class="brand-mark-img" src="logo.png" alt="logo">
+      <span class="brand-name" id="sidebarCompanyName">Attendance</span>
+    </div>
+    <nav>
+      <button class="nav-item active" data-page="dashboard"><span class="ic">&#8962;</span>Dashboard</button>
+      <button class="nav-item" data-page="employees"><span class="ic">&#128101;</span>Employees</button>
+      <button class="nav-item" data-page="attendance"><span class="ic">&#128337;</span>Attendance</button>
+      <button class="nav-item" data-page="payroll"><span class="ic">&#128176;</span>Payroll</button>
+      <button class="nav-item" data-page="reports"><span class="ic">&#128202;</span>Reports</button>
+      <button class="nav-item admin-only" data-page="devices"><span class="ic">&#128225;</span>Devices</button>
+      <button class="nav-item admin-only" data-page="synclog"><span class="ic">&#128220;</span>Sync log</button>
+      <button class="nav-item admin-only" data-page="settings"><span class="ic">&#9881;</span>Settings</button>
+      <button class="nav-item" data-page="account"><span class="ic">&#128100;</span>My Account</button>
+    </nav>
+    <button id="logoutBtn" class="nav-item logout"><span class="ic">&#8630;</span>Sign out</button>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <button id="menuToggle" class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+      <h2 id="pageTitle">Dashboard</h2>
+      <div class="topbar-right">
+        <span id="userLabel"></span>
+      </div>
+    </header>
+
+    <main id="content" class="content"></main>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
